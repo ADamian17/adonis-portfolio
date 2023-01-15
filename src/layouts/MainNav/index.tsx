@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
 
-import styles from "./MainNav.module.scss"
-import CustomLink from "../../components/CustomLink";
+import MenuItemList from "./MenuItemsList";
 
-export type MainNavType = {};
+import styles from "./MainNav.module.scss";
 
-const MainNav: React.FC<MainNavType> = (props) => {
+const MainNav: React.FC = (props) => {
   const navItems = [
     {
       path: "/#projects",
@@ -28,28 +26,11 @@ const MainNav: React.FC<MainNavType> = (props) => {
     },
   ]
 
-  const menuItemsList = navItems.map(({
-    path,
-    label,
-    icon,
-    target
-  }) => (
-    <li className={styles.mainNavMenuItem}>
-      <CustomLink className={styles.mainNavMenuLink} path={path} target={target!}>
-        <svg>
-          <use href={`/icons/nav-icons.svg#${icon}`}></use>
-        </svg>
-
-        <span>{label}</span>
-      </CustomLink>
-    </li>
-  ));
-
   return (
     <div className={styles.mainNavWrapper}>
       <header className={styles.mainNav}>
         <menu className={styles.mainNavMenu}>
-          {menuItemsList}
+          <MenuItemList navItems={navItems} />
         </menu>
       </header>
     </div>
