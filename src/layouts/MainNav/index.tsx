@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import styles from "./MainNav.module.scss"
-import { Link } from "gatsby";
+import CustomLink from "../../components/CustomLink";
 
 export type MainNavType = {};
 
@@ -20,7 +21,7 @@ const MainNav: React.FC<MainNavType> = (props) => {
       target: null
     },
     {
-      path: "/#projects",
+      path: "/docs/resume2021.pdf",
       label: "Resume",
       icon: "icon-download",
       target: "_blank"
@@ -34,13 +35,13 @@ const MainNav: React.FC<MainNavType> = (props) => {
     target
   }) => (
     <li className={styles.mainNavMenuItem}>
-      <Link className={styles.mainNavMenuLink} to={path}>
+      <CustomLink className={styles.mainNavMenuLink} path={path} target={target!}>
         <svg>
           <use href={`/icons/nav-icons.svg#${icon}`}></use>
         </svg>
 
         <span>{label}</span>
-      </Link>
+      </CustomLink>
     </li>
   ));
 
@@ -49,17 +50,6 @@ const MainNav: React.FC<MainNavType> = (props) => {
       <header className={styles.mainNav}>
         <menu className={styles.mainNavMenu}>
           {menuItemsList}
-
-          {/* 
-        <li className="nav__item">
-        <a href="/resume/resume2021.pdf" target="_blank" className="nav__link">
-        <svg>
-        <use href="assets/icons.svg#icon-download"></use>
-        </svg>
-        Resume
-        </a>
-        </li> 
-      */}
         </menu>
       </header>
     </div>
