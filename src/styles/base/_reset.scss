@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1 rem = 10px
+
+  @include media-query('xl', 'up') {
+    font-size: 50%; // 1 rem = 8px
+  }
+}
+
+body {
+  color: $color-grey-dark-2;
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+}

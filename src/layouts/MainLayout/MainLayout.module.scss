@@ -1,0 +1,12 @@
+@use 'main' as *;
+
+.mainLayout {
+  display: grid;
+  position: relative;
+
+  @include grid-columns;
+
+  > * {
+    grid-column: center-start / center-end;
+  }
+}
