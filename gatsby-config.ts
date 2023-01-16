@@ -15,14 +15,14 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    {
-      resolve: 'gatsby-source-contentful',
-      options: {
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        downloadLocal: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-contentful',
+    //   options: {
+    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    //     spaceId: process.env.CONTENTFUL_SPACE_ID,
+    //     downloadLocal: true,
+    //   },
+    // },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
