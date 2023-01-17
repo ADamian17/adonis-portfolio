@@ -3,14 +3,14 @@ import CustomLink from '../../../components/CustomLink';
 
 import styles from "./MenuItem.module.scss";
 
-const MenuItem: React.FC<MainNav.MenuItemType> = ({ path, label, icon, target }) => (
+const MenuItem: React.FC<MainNav.MenuItemType> = ({ menuLink, menuLabel, menuIcon, menuTarget }) => (
   <li className={styles.mainNavMenuItem}>
-    <CustomLink className={styles.mainNavMenuLink} path={path} target={target!}>
+    <CustomLink className={styles.mainNavMenuLink} path={menuLink!} target={menuTarget!}>
       <svg>
-        <use href={`/icons/nav-icons.svg#${icon}`}></use>
+        <use href={`/icons/nav-icons.svg#${menuIcon}`}></use>
       </svg>
 
-      <span>{label}</span>
+      <span>{menuLabel}</span>
     </CustomLink>
   </li>
 )

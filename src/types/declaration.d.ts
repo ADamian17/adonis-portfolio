@@ -2,10 +2,10 @@ declare module '*.scss';
 
 declare namespace MainNav {
   type MenuItemType = {
-    path: string;
-    label: string;
-    icon: string;
-    target: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'] | null;
+    menuLink: Queries.ContentfulMenuItem['menuLink'];
+    menuLabel: Queries.ContentfulMenuItem['menuLabel'];
+    menuIcon: Queries.ContentfulMenuItem['menuIcon'];
+    menuTarget: Queries.ContentfulMenuItem['menuLabel'] | null;
   };
 
   type MenuItemsListType = {

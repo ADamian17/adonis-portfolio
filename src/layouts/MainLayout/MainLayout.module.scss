@@ -6,7 +6,10 @@
 
   @include grid-columns;
 
-  > * {
-    grid-column: center-start / center-end;
+  .main {
+    display: grid;
+    grid-column: full-start / full-end;
+
+    @include grid-columns;
   }
 }

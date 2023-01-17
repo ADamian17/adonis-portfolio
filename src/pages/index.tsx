@@ -1,11 +1,13 @@
-import * as React from "react"
+import React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+
 import MainLayout from "../layouts/MainLayout"
+import MainHero from "../components/Heros/MainHeros"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <MainLayout>
-      jsdhfjksdf
+      <MainHero />
     </MainLayout>
   )
 }

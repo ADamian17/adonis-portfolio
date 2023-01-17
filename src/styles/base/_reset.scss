@@ -11,16 +11,11 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1 rem = 10px
-
-  @include media-query('xl', 'up') {
-    font-size: 50%; // 1 rem = 8px
-  }
 }
 
 body {
   color: $color-grey-dark-2;
   font-family: $font-primary;
-  font-size: 1.6rem;
   font-weight: 300;
   min-height: 100vh;
 }
