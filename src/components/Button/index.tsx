@@ -1,6 +1,7 @@
 import React from 'react'
 
 import CustomLink from '../CustomLink';
+
 import styles from "./Button.module.scss";
 
 type ButtonType = {
@@ -10,7 +11,12 @@ type ButtonType = {
 
 const Button: React.FC<ButtonType> = ({ path, label }) => {
   return (
-    <CustomLink role="button" path={path} className={styles.button}>{label}</CustomLink>
+    <CustomLink
+      role="button"
+      path={path}
+      className={styles.button}>
+      {label}
+    </CustomLink>
   )
 }
 
