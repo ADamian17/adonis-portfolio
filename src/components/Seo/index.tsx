@@ -19,7 +19,7 @@ const Seo: React.FC<Partial<SeoType>> = ({ title, pathname, children }) => {
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={`${siteUrl}/images/hero-image.png`} />
       {/* <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

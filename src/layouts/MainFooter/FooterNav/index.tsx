@@ -11,7 +11,7 @@ const FooterNav: React.FC<FooterNavType> = ({ footerNavItems }) => (
   <ul role="menubar" className={styles.footerNav}>
     {
       footerNavItems && footerNavItems.map((navItem) => (
-        <li>
+        <li key={navItem?.menuLabel}>
           <CustomLink
             className={styles.footerNavItem}
             path={navItem?.menuLink!}
