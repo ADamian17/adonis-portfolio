@@ -5,12 +5,8 @@
   height: 5rem;
 
   .mainNav {
-    background-color: $color-secondary;
-    bottom: 0;
+    background-color: $bg-color-default-black;
     height: 5rem;
-    left: 0;
-    position: fixed;
-    width: 100%;
 
     .mainNavMenu {
       align-items: center;
@@ -19,12 +15,6 @@
       height: 100%;
       justify-content: center;
       list-style: none;
-    }
-
-    @include media-query('md', 'up') {
-      position: initial;
-      bottom: initial;
-      left: initial;
     }
   }
 }

@@ -1,0 +1,34 @@
+@use 'main' as *;
+
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+
+.headingWrapper {
+  align-items: center;
+  display: flex;
+  grid-column: center-start / center-end;
+  justify-content: center;
+  padding: 1rem;
+
+  h2 {
+    margin: 0;
+  }
+
+  .heading {
+    @extend %heading;
+
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+
+    &.headingLight {
+      color: $color-grey-light-2;
+    }
+
+    &.headingDark {
+      color: $color-grey-dark-1;
+    }
+  }
+}

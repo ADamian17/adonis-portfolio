@@ -19,12 +19,12 @@
 
   &:hover {
     background-color: $color-primary-dark;
-    color: $color-white;
-    box-shadow: 0 1rem 2rem rgba($color-secondary, 0.15);
+    color: $color-default-white;
+    box-shadow: 0 1rem 2rem rgba($color-default-black, 0.15);
   }
 
   &:active {
-    box-shadow: 0 0.5rem 1rem rgba($color-secondary, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba($color-default-black, 0.15);
   }
 }
 
@@ -60,11 +60,11 @@
 //   }
 
 //   &--white {
-//     background-color: $color-white;
+//     background-color: $color-default-white;
 //     color: $color-grey-dark;
 
 //     &::after {
-//       background-color: $color-white;
+//       background-color: $color-default-white;
 //     }
 //   }
 
@@ -88,7 +88,7 @@
 
 //   &:hover {
 //     background-color: $color-primary-dark;
-//     color: $color-white;
+//     color: $color-default-white;
 //     box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
 //     transform: translate(-2px);
 //   }

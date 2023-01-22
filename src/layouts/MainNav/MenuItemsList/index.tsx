@@ -6,7 +6,7 @@ const MenuItemList: React.FC<MainNav.MenuItemsListType> = ({ navItems }) => {
   return (
     <>
       {
-        navItems.map((navItem) => <MenuItem key={navItem.menuLabel} {...navItem} />)
+        navItems && navItems.map((navItem) => <MenuItem key={navItem.menuLabel} {...navItem} />)
       }
     </>
   )

@@ -12,6 +12,7 @@
     grid-column: center-start / center-end;
     height: fit-content;
     max-width: 38rem;
+    margin-bottom: 2rem;
 
     .heroHeadline {
       color: $color-grey-dark-1;
@@ -24,12 +25,6 @@
 
   .heroImage {
     grid-column: center-start / center-end;
-    height: 40rem;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   @include media-query('md', 'up') {
@@ -40,6 +35,7 @@
     .headlineWrapper {
       grid-column: 2 / 6;
       justify-self: center;
+      margin-bottom: 0;
     }
 
     .heroImage {

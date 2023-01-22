@@ -1,15 +1,17 @@
 import React from 'react'
 
-import MainHero from '../../components/Heros/MainHeros';
+import MainHero from '../../components/Heros/MainHero';
 import MainNav from '../MainNav';
 
 import styles from "./MainLayout.module.scss";
+import MainFooter from '../MainFooter';
 
 type MainLayoutType = {
   children: React.ReactNode;
+  footerData: Queries.ContentfulPageTemplate["footerSection"]
 }
 
-const MainLayout: React.FC<MainLayoutType> = ({ children }) => {
+const MainLayout: React.FC<MainLayoutType> = ({ children, footerData }) => {
   return (
     <div className={styles.mainLayout}>
       <MainNav />
@@ -18,9 +20,7 @@ const MainLayout: React.FC<MainLayoutType> = ({ children }) => {
         {children}
       </main>
 
-      <footer style={{ backgroundColor: "blue", gridColumn: "full-start / full-end" }}>
-        footer
-      </footer>
+      <MainFooter footerData={footerData} />
     </div>
   )
 }
