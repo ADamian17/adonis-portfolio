@@ -11,7 +11,7 @@ const FooterFrom: React.FC = (props) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://formkeep.com/f/8e6292454fc8", {
+      await fetch("https://formkeep.com/f/8e6292454fc8", {
         method: "POST",
         headers: {
           'Content-Type': "multipart/form-data"
@@ -73,7 +73,7 @@ const FooterFrom: React.FC = (props) => {
       </textarea>
 
       <input
-        className={styles.footerFormTextArea}
+        className={styles.footerFormSubmitBtn}
         type="submit"
         value="let's connect"
       />

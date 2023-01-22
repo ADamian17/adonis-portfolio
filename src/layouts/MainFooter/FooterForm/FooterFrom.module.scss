@@ -36,6 +36,8 @@
   }
 
   .footerFormSubmitBtn {
+    @extend %button;
+
     grid-column: col-start 1 / span 4;
     width: 100%;
   }
