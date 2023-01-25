@@ -1,0 +1,75 @@
+@use 'sass:map';
+
+$galleryItemPosition: (
+  '1': (
+    'row': 1 / span 2,
+    'column': 1 / span 2,
+  ),
+  '2': (
+    'row': 1 / span 3,
+    'column': 3 / span 3,
+  ),
+  '3': (
+    'row': 1 / span 2,
+    'column': 6 / span 2,
+  ),
+  '4': (
+    'row': 1 / span 2,
+    'column': 8 / span 1,
+  ),
+  '5': (
+    'row': 3 / span 3,
+    'column': 1 / span 2,
+  ),
+  '6': (
+    'row': 4 / span 2,
+    'column': 3 / span 2,
+  ),
+  '7': (
+    'row': 4 / span 1,
+    'column': 5 / span 1,
+  ),
+  '8': (
+    'row': 3 / span 2,
+    'column': 6 / span 2,
+  ),
+  '9': (
+    'row': 3 / span 3,
+    'column': 8 / span 1,
+  ),
+  '10': (
+    'row': 6 / span 2,
+    'column': 1 / span 1,
+  ),
+  '11': (
+    'row': 6 / span 2,
+    'column': 2 / span 2,
+  ),
+  '12': (
+    'row': 6 / span 2,
+    'column': 4 / span 1,
+  ),
+  '13': (
+    'row': 5 / span 3,
+    'column': 5 / span 3,
+  ),
+  '14': (
+    'row': 6 / span 2,
+    'column': 8 / span 1,
+  ),
+);
+
+@mixin galleryItemPosition($target) {
+  $current: map.get($galleryItemPosition, #{$target});
+
+  &:nth-of-type(#{$target}) {
+    grid-row: map.get($current, 'row');
+    grid-column: map.get($current, 'column');
+  }
+}
+
+@mixin galleryItem($item-amount: 14) {
+  @for $i from 1 through $item-amount {
+    @include galleryItemPosition($i);
+  }
+}
