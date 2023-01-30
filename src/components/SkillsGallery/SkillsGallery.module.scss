@@ -7,55 +7,87 @@ $galleryItemPosition: (
     'column': 1 / span 2,
   ),
   '2': (
-    'row': 1 / span 3,
-    'column': 3 / span 3,
+    'row': 1 / span 2,
+    'column': 3 / span 2,
   ),
   '3': (
     'row': 1 / span 2,
-    'column': 6 / span 2,
+    'column': 5 / span 1,
   ),
   '4': (
     'row': 1 / span 2,
-    'column': 8 / span 1,
+    'column': 6 / span 2,
   ),
   '5': (
-    'row': 3 / span 3,
-    'column': 1 / span 2,
+    'row': initial,
+    'column': initial,
   ),
   '6': (
-    'row': 4 / span 2,
-    'column': 3 / span 2,
+    'row': initial,
+    'column': initial,
   ),
   '7': (
-    'row': 4 / span 1,
-    'column': 5 / span 1,
+    'row': 3 / span 2,
+    'column': 1 / span 1,
   ),
   '8': (
     'row': 3 / span 2,
-    'column': 6 / span 2,
-  ),
-  '9': (
-    'row': 3 / span 3,
-    'column': 8 / span 1,
-  ),
-  '10': (
-    'row': 6 / span 2,
-    'column': 1 / span 1,
-  ),
-  '11': (
-    'row': 6 / span 2,
     'column': 2 / span 2,
   ),
+  '9': (
+    'row': 3 / span 2,
+    'column': 4,
+  ),
+  '10': (
+    'row': 3 / span 2,
+    'column': 5 / span 2,
+  ),
+  '11': (
+    'row': 3 / span 2,
+    'column': initial,
+  ),
   '12': (
-    'row': 6 / span 2,
-    'column': 4 / span 1,
+    'row': 3 / span 2,
+    'column': initial,
   ),
   '13': (
-    'row': 5 / span 3,
-    'column': 5 / span 3,
+    'row': 5 / span 2,
+    'column': 1 / span 1,
   ),
   '14': (
-    'row': 6 / span 2,
+    'row': 5 / span 2,
+    'column': 2 / span 1,
+  ),
+  '15': (
+    'row': 2 / span 2,
+    'column': 6,
+  ),
+  '16': (
+    'row': initial,
+    'column': initial,
+  ),
+  '17': (
+    'row': 5 / span 2,
+    'column': 4 / span 2,
+  ),
+  '18': (
+    'row': 5 / span 2,
+    'column': 6 / span 1,
+  ),
+  '19': (
+    'row': initial,
+    'column': initial,
+  ),
+  '20': (
+    'row': initial,
+    'column': initial,
+  ),
+  '21': (
+    'row': initial,
+    'column': initial,
+  ),
+  '22': (
+    'row': 5 / span 2,
     'column': 8 / span 1,
   ),
 );
@@ -71,14 +103,15 @@ $galleryItemPosition: (
 .skillsGallery {
   background-color: $color-grey-light-1;
   display: grid;
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(7, 5vw);
+  grid-template-rows: repeat(6, 4.5vw);
   margin-top: 4rem;
-  padding: 1.5rem;
+  padding: 3.8rem;
 
   .skillsGalleryItem {
-    @for $i from 1 through 14 {
+    @for $i from 1 through 22 {
       @include galleryItemPosition($i);
     }
 
