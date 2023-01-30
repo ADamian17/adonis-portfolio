@@ -108,7 +108,7 @@ $galleryItemPosition: (
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 4.5vw);
   margin-top: 4rem;
-  padding: 3.8rem;
+  padding: 8rem;
 
   .skillsGalleryItem {
     @for $i from 1 through 22 {
