@@ -4,8 +4,9 @@ import { PageProps, graphql } from 'gatsby'
 import MainHero from '../../components/Heros/MainHero'
 import MainLayout from '../../layouts/MainLayout'
 import Seo from '../../components/Seo'
-import HeadingWrapper from '../../components/HeadingWrapper'
 import SkillsContainer from '../../containers/SkillsContainer'
+import AboutMeContainer from '../../containers/AboutMeContainer'
+import ProjectsContainer from '../../containers/ProjectsContainer'
 
 type HomePageType = {
   contentfulPageTemplate: Queries.ContentfulPageTemplate;
@@ -22,6 +23,10 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
   return (
     <MainLayout footerData={footerSection}>
       <MainHero heroData={heroSection} />
+
+      <AboutMeContainer />
+
+      <ProjectsContainer />
 
       <SkillsContainer />
     </MainLayout>
