@@ -20,7 +20,7 @@ const SkillsGallery: React.FC<SkillsGalleryType> = (props) => {
       </figure>
 
       <figure className={styles.skillsGalleryItem}>
-        <img src="/icons/skills/expressjs-ar21.svg" alt="gallery img 4" className={styles.skillsGalleryItemImg} />
+        <img src="/icons/skills/expressjs.svg" alt="gallery img 4" className={styles.skillsGalleryItemImg} />
       </figure>
 
       <figure className={styles.skillsGalleryItem}>
