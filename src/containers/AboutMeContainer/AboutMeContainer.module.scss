@@ -14,10 +14,15 @@
     .aboutMeImg {
       flex: 0 50%;
       align-self: flex-start;
+      display: none;
 
       img {
         width: 100%;
         height: 100%;
+      }
+
+      @include media-query('lg', 'up') {
+        display: initial;
       }
 
       @include media-query('xl', 'up') {
@@ -31,14 +36,16 @@
   }
 
   .aboutMeContent {
-    flex: 0 50%;
-
-    .aboutMeHeadline {
-      justify-content: flex-start;
-    }
-
     .aboutMeCopy {
       font-size: 1.8rem;
+    }
+
+    @include media-query('lg', 'up') {
+      flex: 0 50%;
+
+      .aboutMeHeadline {
+        justify-content: flex-start;
+      }
     }
   }
 
