@@ -8,7 +8,7 @@ dotenv.config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Adonis Damian Martin`,
-    siteUrl: process.env.GATSBY_SITE_URL,
+    siteUrl: ``,
     image: `/icons/favicon.ico`,
   },
   // Learn more at: https://gatsby.dev/graphql-typegen
