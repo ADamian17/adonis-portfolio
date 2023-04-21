@@ -8,8 +8,8 @@ import Button from "../../components/Button";
 export type ProjectsContainerType = {};
 
 const ProjectsContainer: React.FC<ProjectsContainerType> = (props) => {
-  const list = [1, 2].map(_ => (
-    <article className={styles.project}>
+  const list = [1, 2].map(item => (
+    <article key={item} className={styles.project}>
       <div className={styles.projectPicture}>
         <div
           className={styles.projectBackdrop}
@@ -26,17 +26,15 @@ const ProjectsContainer: React.FC<ProjectsContainerType> = (props) => {
       </div>
 
       <div className={styles.projectContent}>
-        <h2 className="heading-2 heading-2--dark mb-md">&ldquo;Some Project Title&rdquo;</h2>
+        <HeadingWrapper copy={"&ldquo; Some Project Title &rdquo;"} variant="dark" headingType="h2" />
 
         <p className={styles.projectText}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit labore neque, dolorum quisquam doloremque error ullam amet iste deleniti aliquam iure, modi hic laboriosam, beatae accusantium ea. Corporis, inventore cum.
         </p>
 
         <div className="btn__group">
-          <Button path={"/"} label={"live Demo"} />
-          <Button path={"/"} label={"Github Repo"} />
-          {/* <a className="btn" href="" style={{ display: "inline-block" }} target="_blank"></a>
-              <a className="btn" href="" style={{ display: "inline-block" }} target="_blank"></a> */}
+          <Button path="/" label="live Demo" />
+          <Button path="/" label="Github Repo" />
         </div>
       </div>
     </article>
