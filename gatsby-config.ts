@@ -8,7 +8,7 @@ dotenv.config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Adonis Damian Martin`,
-    siteUrl: ``,
+    siteUrl: `https://adonis-portfolio.vercel.app/`,
     image: `/icons/favicon.ico`,
   },
   // Learn more at: https://gatsby.dev/graphql-typegen
