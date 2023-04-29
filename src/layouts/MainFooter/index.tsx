@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import FooterFrom from './FooterForm'
 import FooterNav from './FooterNav'
@@ -12,6 +12,7 @@ type MainFooterType = {
 
 const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
   const { headline, footerNav } = footerData!
+  const year = useRef(new Date().getFullYear())
   return (
     <footer className={styles.footer}>
       <HeadingWrapper copy={headline!} variant="light" />
@@ -21,7 +22,7 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
       <FooterNav footerNavItems={footerNav} />
 
       <p className={styles.copyright}>
-        Adonis D. Martin &copy; Copyright 2021.
+        Adonis D. Martin &copy; Copyright {year.current}.
       </p>
     </footer>
   )
