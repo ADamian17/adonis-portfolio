@@ -15,8 +15,9 @@ type HomePageType = {
 const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
   const {
     contentfulPageTemplate: {
+      aboutMeSection,
+      footerSection,
       heroSection,
-      footerSection
     }
   } = data
 
@@ -24,7 +25,7 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
     <MainLayout footerData={footerSection}>
       <MainHero heroData={heroSection} />
 
-      <AboutMeContainer />
+      <AboutMeContainer aboutMeData={aboutMeSection} />
 
       <ProjectsContainer />
 
@@ -41,27 +42,9 @@ export const query = graphql`
   query HomePageQuery ($id: String!) {
     contentfulPageTemplate(id: {eq: $id}) {
       templateName
-      heroSection {
-        heroCtaLabel
-        heroCtaLink
-        heroHeadline
-        heroImage {
-          gatsbyImage(
-            width: 800, 
-            placeholder: BLURRED, 
-            formats: [WEBP, PNG, AUTO]
-          )
-        }
-      }
-      footerSection {
-        headline
-        footerNav {
-          menuLabel
-          menuLink
-          menuTarget
-          menuIcon
-        }
-      }
+      ...HeroFragment
+      ...AboutFragment
+      ...FooterFragment
     }
   }
 `;
