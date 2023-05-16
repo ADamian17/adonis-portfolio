@@ -14,11 +14,12 @@ html {
 }
 
 body {
-  color: $color-grey-dark-2;
-  font-family: $font-primary;
+  color: $color-white-smoke;
+  font-family: $font-family;
   font-weight: 300;
   min-height: 100vh;
   scroll-behavior: smooth;
+  background-color: $color-black;
 }
 
 a,
