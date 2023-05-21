@@ -1,9 +1,14 @@
 @use 'main' as *;
 
 .footer {
+  display: grid;
   background-color: $color-black-smoke;
   grid-column: full-start / full-end;
   padding: 6rem 1.6rem;
+
+  > * {
+    grid-column: 1 / -1;
+  }
 
   .copyWrapper {
     font-size: 1.6rem;
@@ -27,10 +32,24 @@
   }
 
   .copyright {
-    color: $color-grey-light-2;
+    color: $color-white-smoke;
     font-size: 1.4rem;
     margin: 2.5rem auto 0;
     text-align: center;
     width: fit-content;
+  }
+
+  .rings {
+    overflow: hidden;
+    grid-row: 2;
+    align-self: end;
+    translate: -1.8rem 0;
+    margin-bottom: 1rem;
+
+    svg {
+      translate: -32.3rem 0;
+      width: 53rem;
+      height: 12.9rem;
+    }
   }
 }

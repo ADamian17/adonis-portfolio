@@ -21,6 +21,7 @@ const FooterFrom: React.FC = (props) => {
     <Form
       acceptCharset="UTF-8"
       onSubmit={handleSubmit}
+      className={styles.footerForm}
     >
 
       <Form.Input

@@ -27,11 +27,19 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
         <FooterFrom />
       </FooterFormProvider>
 
-      <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
+      <div>
+        <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
 
-      <p className={styles.copyright}>
-        &copy; Copyright {year.current}.
-      </p>
+        <p className={styles.copyright}>
+          &copy; Copyright {year.current}.
+        </p>
+      </div>
+
+      <div className={styles.rings}>
+        <svg>
+          <use href='/icons/pattern-rings.svg#icon'></use>
+        </svg>
+      </div>
     </footer>
   )
 }

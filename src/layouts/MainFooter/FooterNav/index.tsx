@@ -1,8 +1,8 @@
 import React from 'react'
 import CustomLink from '../../../components/CustomLink';
+import Heading from '../../../components/Heading';
 
 import styles from "./FooterNav.module.scss";
-import Heading from '../../../components/Heading';
 
 type FooterNavType = {
   footerNavItems: Queries.ContentfulFooterContent["footerNav"],
