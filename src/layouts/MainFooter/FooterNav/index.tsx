@@ -10,11 +10,8 @@ type FooterNavType = {
 }
 
 const FooterNav: React.FC<FooterNavType> = ({ footerNavItems, headline }) => (
-  <>
-    <hr className={styles.footerNavDivider} />
-
+  <div className={styles.footerNavWrapper}>
     <Heading copy={headline!} className={styles.footerNavHeadline} />
-
     <ul role="menubar" className={styles.footerNav}>
       {
         footerNavItems && footerNavItems.map((navItem) => (
@@ -32,7 +29,7 @@ const FooterNav: React.FC<FooterNavType> = ({ footerNavItems, headline }) => (
         ))
       }
     </ul>
-  </>
+  </div>
 )
 
 export default FooterNav

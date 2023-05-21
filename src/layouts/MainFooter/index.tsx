@@ -31,7 +31,7 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
         <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
 
         <p className={styles.copyright}>
-          &copy; Copyright {year.current}.
+          &copy; Copyright {year.current}
         </p>
       </div>
 

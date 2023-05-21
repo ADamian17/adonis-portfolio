@@ -52,4 +52,43 @@
       height: 12.9rem;
     }
   }
+
+  @include media-query('md', 'up') {
+    padding: 4rem 3rem;
+
+    .copyWrapper,
+    [class*='form'] {
+      width: 44.5rem;
+      justify-self: center;
+    }
+
+    .copyWrapper {
+      .copyHeadline {
+        font-size: 7.2rem;
+        letter-spacing: -2.04545px;
+        line-height: 7.2rem;
+      }
+
+      .subcopy {
+        font-size: 1.8rem;
+      }
+    }
+
+    .rings {
+      grid-row: 2;
+      align-self: end;
+      translate: -1.8rem 7rem;
+      margin-bottom: 0;
+      width: 16.2rem;
+
+      svg {
+        translate: -36.8rem 0;
+      }
+    }
+
+    .copyright {
+      width: 100%;
+      text-align: end;
+    }
+  }
 }
