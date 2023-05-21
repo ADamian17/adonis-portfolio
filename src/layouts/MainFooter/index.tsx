@@ -2,7 +2,8 @@ import React, { useRef } from 'react'
 
 import FooterFrom from './FooterForm'
 import FooterNav from './FooterNav'
-import HeadingWrapper from '../../components/HeadingWrapper'
+import Heading from '../../components/Heading'
+import { FooterFormProvider } from './FooterForm/FooterFormProvider'
 
 import styles from "./MainFooter.module.scss"
 
@@ -11,18 +12,25 @@ type MainFooterType = {
 }
 
 const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
-  const { headline, footerNav } = footerData!
+  const { headline, subcopy, footerNav } = footerData!
   const year = useRef(new Date().getFullYear())
+
   return (
     <footer className={styles.footer}>
-      <HeadingWrapper copy={headline!} variant="light" />
+      <div className={styles.copyWrapper}>
+        <Heading copy={headline!} className={styles.copyHeadline} />
 
-      <FooterFrom />
+        <p className={styles.subcopy}>{subcopy?.subcopy}</p>
+      </div>
 
-      <FooterNav footerNavItems={footerNav} />
+      <FooterFormProvider>
+        <FooterFrom />
+      </FooterFormProvider>
+
+      <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
 
       <p className={styles.copyright}>
-        Adonis D. Martin &copy; Copyright {year.current}.
+        &copy; Copyright {year.current}.
       </p>
     </footer>
   )

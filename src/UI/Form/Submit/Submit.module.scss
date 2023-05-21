@@ -1,0 +1,6 @@
+@use 'main' as *;
+
+.submitBtn {
+  @extend %base-btn;
+  justify-self: end;
+}

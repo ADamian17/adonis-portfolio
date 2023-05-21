@@ -1,0 +1,45 @@
+@use 'main' as *;
+
+.footerForm {
+  display: grid;
+  row-gap: 3.2rem;
+  // align-content: center;
+  // grid-column: center-start / center-end;
+  // grid-template-columns: repeat(
+  //   4,
+  //   [col-start] minmax(min-content, 14rem) [col-end]
+  // );
+  // grid-template-rows: repeat(3, min-content);
+  // justify-content: center;
+  // margin: 2.8rem 0 2rem;
+  // padding: 1rem;
+  // row-gap: 2rem;
+
+  // .footerFormRow {
+  //   display: grid;
+  //   gap: 2rem;
+  //   grid-column: col-start 1 / -1;
+  //   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  //   width: 100%;
+  // }
+
+  // .footerFormInput {
+  //   width: 100%;
+  //   height: 4rem;
+  //   padding: 1rem;
+  // }
+
+  // .footerFormTextArea {
+  //   grid-column: col-start 1 / span 4;
+  //   width: 100%;
+  //   padding: 1rem;
+  //   text-transform: capitalize;
+  // }
+
+  // .footerFormSubmitBtn {
+  //   @extend %button;
+
+  //   grid-column: col-start 1 / span 4;
+  //   width: 100%;
+  // }
+}

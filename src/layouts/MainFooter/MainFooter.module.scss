@@ -1,9 +1,30 @@
 @use 'main' as *;
 
 .footer {
-  background-color: $bg-color-default-black;
+  background-color: $color-black-smoke;
   grid-column: full-start / full-end;
-  padding: 4rem;
+  padding: 6rem 1.6rem;
+
+  .copyWrapper {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+    text-align: center;
+    margin-bottom: 5rem;
+
+    .copyHeadline {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -1.13636px;
+      line-height: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .subcopy {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
 
   .copyright {
     color: $color-grey-light-2;
@@ -11,46 +32,5 @@
     margin: 2.5rem auto 0;
     text-align: center;
     width: fit-content;
-  }
-}
-
-// .back-to-the-top {
-//   position: fixed;
-//   bottom: 10vh;
-//   right: 1.5rem;
-
-//   visibility: hidden;
-//   pointer-events: none;
-
-//   a {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     width: 3rem;
-//     padding: 0.5rem;
-//     background-color: rgba(53, 55, 55, 0.337);
-//     border-radius: 0.4rem;
-//   }
-
-//   .item {
-//     width: 1.5rem;
-//     height: 1.5rem;
-//     animation: toTop 1.5s infinite;
-//     animation-delay: calc(var(--order) * 100ms);
-//   }
-
-//   svg {
-//     width: 100%;
-//     height: 100%;
-//   }
-// }
-
-@keyframes toTop {
-  from {
-    fill: #595757;
-  }
-  to {
-    fill: transparent;
   }
 }

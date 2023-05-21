@@ -1,4 +1,19 @@
 @use './colors' as *;
+@use './variables' as *;
+
+%base-btn {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-green;
+  color: $color-white;
+  padding: 0 0 1rem;
+  letter-spacing: 2.28571px;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-green;
+  }
+}
 
 %button {
   padding: 1.8rem 2.4rem;

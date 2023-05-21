@@ -1,84 +1,54 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import styles from "./FooterFrom.module.scss";
+import { FooterFormProvider, useFooterFormCtx } from './FooterFormProvider';
+import Form from '../../../UI/Form';
+
+import styles from "./FooterForm.module.scss";
 
 const FooterFrom: React.FC = (props) => {
-  const [first_name, setFirstName] = useState('')
-  const [last_name, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      await fetch("https://formkeep.com/f/8e6292454fc8", {
-        method: "POST",
-        headers: {
-          'Content-Type': "multipart/form-data"
-        },
-        body: JSON.stringify({
-          first_name,
-          last_name,
-          email
-        })
-      })
-
-      setEmail("")
-      setFirstName("")
-      setLastName("")
-    } catch (error) {
-      console.log({ error });
-    }
-  }
+  const {
+    email,
+    emailError,
+    handleChange,
+    handleEmailBlur,
+    handleEmailChange,
+    handleEmailFocus,
+    handleSubmit,
+    name,
+  } = useFooterFormCtx();
 
   return (
-    <form
-      onSubmit={handleSubmit}
+    <Form
       acceptCharset="UTF-8"
-      className={styles.footerForm}
+      onSubmit={handleSubmit}
     >
-      <div className={styles.footerFormRow}>
-        <input
-          className={styles.footerFormInput}
-          type="text"
-          name="first_name"
-          id="firstName"
-          placeholder="First name" />
 
-        <input
-          className={styles.footerFormInput}
-          type="text"
-          name="last_name"
-          id="lastName"
-          placeholder="Last name" />
-      </div>
-
-      <div className={styles.footerFormRow}>
-        <input
-          className={styles.footerFormInput}
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email" />
-      </div>
-
-      <textarea
-        className={styles.footerFormTextArea}
-        name="message"
-        id="message"
-        cols={30}
-        rows={10}
-        placeholder="message"
-      >
-      </textarea>
-
-      <input
-        className={styles.footerFormSubmitBtn}
-        type="submit"
-        value="let's connect"
+      <Form.Input
+        onChange={handleChange}
+        placeholder='Name'
+        value={name}
       />
-    </form>
+
+      <Form.Input
+        error={emailError}
+        onBlur={handleEmailBlur}
+        onChange={handleEmailChange}
+        placeholder='Email'
+        value={email}
+        onFocus={handleEmailFocus}
+      />
+
+      <Form.Textarea
+        cols={30}
+        id=""
+        name=""
+        placeholder='Message'
+        rows={4}
+      />
+
+      <Form.Submit value="send message" />
+    </Form>
   )
 }
 
-export default FooterFrom
+export default FooterFrom;
