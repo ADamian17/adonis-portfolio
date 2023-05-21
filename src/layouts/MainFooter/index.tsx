@@ -27,7 +27,7 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
         <FooterFrom />
       </FooterFormProvider>
 
-      <div>
+      <div className={styles.copyrightWrapper}>
         <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
 
         <p className={styles.copyright}>
