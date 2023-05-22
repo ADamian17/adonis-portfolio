@@ -18,37 +18,6 @@
   }
 }
 
-@mixin grid-columns() {
-  grid-template-columns:
-    [ full-start]
-    2.4rem
-    [ center-start]
-    repeat(8, minmax(min-content, 14rem))
-    [ center-end]
-    2.4rem
-    [ full-end];
-
-  @include media-query('lg', 'up') {
-    grid-template-columns:
-      [ full-start]
-      minmax(6rem, 1fr)
-      [ center-start]
-      repeat(8, minmax(min-content, 14rem))
-      [ center-end]
-      minmax(6rem, 1fr)
-      [ full-end];
-  }
-}
-
-@function set-outer-columns($side-col: 0) {
-  @return [ full-start] $side-col [ center-start] minmax(min-content, 1fr) [
-    center-end] $side-col [ full-end];
-}
-
-@function set-inner-columns($cols: 4, $cols-size: 1fr) {
-  @return [ center-start] repeat($cols, $cols-size) [ center-end];
-}
-
 @mixin main-layout {
   column-gap: 1.6rem;
   display: grid;

@@ -35,18 +35,13 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
           <p className={styles.copyright}>
             &copy; Copyright {year.current}
           </p>
+
         </Container.Centered>
+
+        <svg className={styles.rings}>
+          <use href='/icons/pattern-rings.svg#icon'></use>
+        </svg>
       </Container>
-
-      {/* 
-
-
-
-    //   <div className={styles.rings}>
-    //     <svg>
-    //       <use href='/icons/pattern-rings.svg#icon'></use>
-    //     </svg>
-    //   </div> */}
     </footer>
   )
 }
