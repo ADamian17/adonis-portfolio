@@ -13,15 +13,19 @@ type MainLayoutType = {
 
 const MainLayout: React.FC<MainLayoutType> = ({ children, footerData }) => {
   return (
-    <div className={styles.mainLayout}>
-      {/* <MainNav />
+    // <div className={styles.mainLayout}>
+    //   <div>
+    //     hero
+    //   </div>
+    //   {/* 
+    //   <MainNav />
 
-      <main className={styles.main}>
-        {children}
-      </main>
-    */}
-      <MainFooter footerData={footerData} />
-    </div>
+    //   <main className={styles.main}>
+    //     {children}
+    //   </main>
+    // */}
+    // </div>
+    <MainFooter footerData={footerData} />
   )
 }
 

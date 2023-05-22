@@ -6,6 +6,7 @@ import Heading from '../../components/Heading'
 import { FooterFormProvider } from './FooterForm/FooterFormProvider'
 
 import styles from "./MainFooter.module.scss"
+import Container from '../../UI/Container'
 
 type MainFooterType = {
   footerData: Queries.ContentfulPageTemplate["footerSection"]
@@ -17,29 +18,35 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyWrapper}>
-        <Heading copy={headline!} className={styles.copyHeadline} />
+      <Container>
+        <Container.Centered>
+          <div className={styles.copyWrapper}>
+            <Heading copy={headline!} className={styles.copyHeadline} />
 
-        <p className={styles.subcopy}>{subcopy?.subcopy}</p>
-      </div>
+            <p className={styles.subcopy}>{subcopy?.subcopy}</p>
+          </div>
 
-      <FooterFormProvider>
-        <FooterFrom />
-      </FooterFormProvider>
+          <FooterFormProvider>
+            <FooterFrom />
+          </FooterFormProvider>
 
-      <div className={styles.copyrightWrapper}>
-        <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
+          <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
 
-        <p className={styles.copyright}>
-          &copy; Copyright {year.current}
-        </p>
-      </div>
+          <p className={styles.copyright}>
+            &copy; Copyright {year.current}
+          </p>
+        </Container.Centered>
+      </Container>
 
-      <div className={styles.rings}>
-        <svg>
-          <use href='/icons/pattern-rings.svg#icon'></use>
-        </svg>
-      </div>
+      {/* 
+
+
+
+    //   <div className={styles.rings}>
+    //     <svg>
+    //       <use href='/icons/pattern-rings.svg#icon'></use>
+    //     </svg>
+    //   </div> */}
     </footer>
   )
 }
