@@ -1,7 +1,6 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
-import AboutMeContainer from '../../containers/AboutMeContainer'
 import MainHero from '../../components/Heros/MainHero'
 import MainLayout from '../../layouts/MainLayout'
 import ProjectsContainer from '../../containers/ProjectsContainer'
@@ -15,7 +14,6 @@ type HomePageType = {
 const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
   const {
     contentfulPageTemplate: {
-      aboutMeSection,
       footerSection,
       heroSection,
       projectsSection,
@@ -27,13 +25,9 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
     <MainLayout footerData={footerSection}>
       {/* <MainHero heroData={heroSection} /> */}
 
-      {/* <AboutMeContainer aboutMeData={aboutMeSection} />
+      <SkillsContainer skillData={skillsSection!} />
 
       <ProjectsContainer projectsData={projectsSection} />
-
-    */}
-
-      <SkillsContainer skillData={skillsSection!} />
     </MainLayout>
   )
 }
@@ -46,7 +40,6 @@ export const query = graphql`
   query HomePageQuery ($id: String!) {
     contentfulPageTemplate(id: {eq: $id}) {
       templateName
-      ...AboutFragment
       ...FooterFragment
       ...HeroFragment
       ...ProjectsFragment

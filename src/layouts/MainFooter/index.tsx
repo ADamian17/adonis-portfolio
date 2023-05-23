@@ -17,7 +17,7 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
   const year = useRef(new Date().getFullYear())
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="contact">
       <Container>
         <Container.Centered>
           <div className={styles.copyWrapper}>
