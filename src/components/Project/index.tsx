@@ -27,7 +27,7 @@ const Project: React.FC<ProjectType> = ({ projectData }) => {
         className={styles.img}
       />
 
-      <div>
+      <div className={styles.headlineWrapper}>
         <Heading copy={name!} />
 
         <ul className={styles.techList}>
