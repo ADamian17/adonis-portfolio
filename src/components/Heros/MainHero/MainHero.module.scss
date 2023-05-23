@@ -1,14 +1,12 @@
 @use 'main' as *;
 
 .mainHero {
-  grid-column: full-start / full-end;
   padding-top: 3.6rem;
   padding-bottom: 4rem;
   display: grid;
-  background-color: $bg-color-default-black;
   margin-bottom: 4rem;
 
-  @include grid-columns;
+  // @include grid-columns;
 
   .headlineWrapper {
     grid-column: center-start / center-end;

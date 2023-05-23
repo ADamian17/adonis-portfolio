@@ -15,7 +15,8 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
 
   return (
     <header className={styles.mainHero} id="top">
-      <section className={styles.headlineWrapper}>
+      hero
+      {/* <section className={styles.headlineWrapper}>
         <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
 
         <Button path={heroCtaLink!} label={heroCtaLabel!} />
@@ -25,7 +26,7 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
         className={styles.heroImage}
         alt='hero img'
         image={imgSrc!}
-      />
+      /> */}
     </header>
   )
 }

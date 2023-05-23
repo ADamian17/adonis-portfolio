@@ -19,6 +19,7 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
       footerSection,
       heroSection,
       projectsSection,
+      skillsSection,
     }
   } = data
 
@@ -30,7 +31,9 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
 
       <ProjectsContainer projectsData={projectsSection} />
 
-      <SkillsContainer /> */}
+    */}
+
+      <SkillsContainer skillData={skillsSection!} />
     </MainLayout>
   )
 }
@@ -47,6 +50,7 @@ export const query = graphql`
       ...FooterFragment
       ...HeroFragment
       ...ProjectsFragment
+      ...SkillsFragment
     }
   }
 `;
