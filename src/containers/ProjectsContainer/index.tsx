@@ -25,13 +25,11 @@ const ProjectsContainer: React.FC<ProjectsContainerType> = ({ projectsData }) =>
         <div className={styles.headlineWrapper}>
           <Headline text="Projects" />
 
-          <Button path={"#contact"} label={"contact me"} />
+          <Button path="#contact" label="contact me" />
         </div>
 
         <div className={styles.projectList}>
-          <div className="project">Project 1
-            <Heading copy={"Project 1"} />
-          </div>
+          {list}
         </div>
       </Container.Centered>
     </Container>
