@@ -71,18 +71,20 @@
   }
 
   .headlineWrapper {
-    padding-top: 4rem;
-    text-align: center;
     display: grid;
-    row-gap: 2rem;
     justify-items: center;
+    max-width: 45.5rem;
+    padding-top: 4rem;
+    row-gap: 2rem;
+    text-align: center;
+    justify-self: center;
 
     .headline {
+      border-bottom: 4px solid transparent;
       font-size: 4rem;
+      letter-spacing: -1.13636px;
       line-height: 4rem;
       text-align: center;
-      letter-spacing: -1.13636px;
-      border-bottom: 4px solid transparent;
 
       span[class='highlight'] {
         border-bottom: 4px solid $color-green;
@@ -133,6 +135,8 @@
     }
 
     .headlineWrapper {
+      max-width: 100%;
+      justify-self: start;
       align-self: start;
       grid-column: 1 / span 6;
       grid-row: 1;
