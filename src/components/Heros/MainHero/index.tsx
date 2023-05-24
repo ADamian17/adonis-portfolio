@@ -54,7 +54,8 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
             <GatsbyImage
               className={styles.gImg}
               alt='hero img'
-              image={imgSrc!} />
+              image={imgSrc!}
+              loading='eager' />
           </div>
 
           <div className={styles.headlineWrapper}>
