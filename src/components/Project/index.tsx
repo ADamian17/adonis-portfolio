@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Project.module.scss"
 import { GatsbyImage } from "gatsby-plugin-image";
-import HeadingWrapper from "../HeadingWrapper";
+
 import Button from "../Button";
 import Heading from "../Heading";
 
@@ -13,11 +13,15 @@ export type ProjectType = {
 const Project: React.FC<ProjectType> = ({ projectData }) => {
   const {
     name,
-    projectDescription,
     projectImage,
     demoLink,
-    codebaseLink
+    codebaseLink,
+    techUsed
   } = projectData;
+
+  const techList = techUsed && techUsed.map((tech) => (
+    <li key={tech?.id}>{tech?.name}</li>
+  ))
 
   return (
     <div className={styles.project}>
@@ -31,9 +35,7 @@ const Project: React.FC<ProjectType> = ({ projectData }) => {
         <Heading copy={name!} />
 
         <ul className={styles.techList}>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
+          {techList}
         </ul>
       </div>
 

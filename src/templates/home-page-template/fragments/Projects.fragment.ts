@@ -5,9 +5,12 @@ export const ProjectsFragment = graphql`
     projectsSection {
       id
       name
-      projectDescription
       demoLink
       codebaseLink
+      techUsed {
+        id
+        name
+      }
       projectImage {
         title
         url
