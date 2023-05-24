@@ -2,28 +2,46 @@ import React, { useRef } from 'react'
 
 import FooterFrom from './FooterForm'
 import FooterNav from './FooterNav'
-import HeadingWrapper from '../../components/HeadingWrapper'
+import Heading from '../../components/Heading'
+import { FooterFormProvider } from './FooterForm/FooterFormProvider'
 
 import styles from "./MainFooter.module.scss"
+import Container from '../../UI/Container'
 
 type MainFooterType = {
   footerData: Queries.ContentfulPageTemplate["footerSection"]
 }
 
 const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
-  const { headline, footerNav } = footerData!
+  const { headline, subcopy, footerNav } = footerData!
   const year = useRef(new Date().getFullYear())
+
   return (
-    <footer className={styles.footer}>
-      <HeadingWrapper copy={headline!} variant="light" />
+    <footer className={styles.footer} id="contact">
+      <Container>
+        <Container.Centered>
+          <div className={styles.copyWrapper}>
+            <Heading copy={headline!} className={styles.copyHeadline} />
 
-      <FooterFrom />
+            <p className={styles.subcopy}>{subcopy?.subcopy}</p>
+          </div>
 
-      <FooterNav footerNavItems={footerNav} />
+          <FooterFormProvider>
+            <FooterFrom />
+          </FooterFormProvider>
 
-      <p className={styles.copyright}>
-        Adonis D. Martin &copy; Copyright {year.current}.
-      </p>
+          <FooterNav footerNavItems={footerNav} headline='Adonis D. Martin' />
+
+          <p className={styles.copyright}>
+            &copy; Copyright {year.current}
+          </p>
+
+        </Container.Centered>
+
+        <svg className={styles.rings}>
+          <use href='/icons/pattern-rings.svg#icon'></use>
+        </svg>
+      </Container>
     </footer>
   )
 }

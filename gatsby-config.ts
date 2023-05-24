@@ -7,9 +7,11 @@ dotenv.config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Adonis Damian Martin`,
+    title: `Adonis Damian Martin | Portfolio`,
     siteUrl: process.env.GATSBY_SITE_URL,
     image: `/icons/favicon.ico`,
+    description:
+      "Nice to meet you! I'm Adonis D. Martin. Based in San Francisco, CA, I'm a front-end developer passionate about building accessible web apps that users love.",
   },
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,

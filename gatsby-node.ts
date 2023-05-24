@@ -21,12 +21,6 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
     }
   `);
 
-  createRedirect({
-    fromPath: '/',
-    toPath: '/',
-    isPermanent: true,
-  });
-
   result.data?.allContentfulPageTemplate.nodes.forEach((node) => {
     const dirTarget = node.templateName?.replaceAll(' ', '-').toLowerCase();
     const templatePath = path.resolve(`src/templates/${dirTarget}/index.tsx`);

@@ -1,6 +1,8 @@
 import React from "react";
 
-import HeadingWrapper from "../../components/HeadingWrapper";
+import Button from "../../components/Button";
+import Container from "../../UI/Container";
+import Headline from "../../components/Headline";
 import Project from "../../components/Project";
 
 import styles from "./ProjectsContainer.module.scss"
@@ -16,13 +18,19 @@ const ProjectsContainer: React.FC<ProjectsContainerType> = ({ projectsData }) =>
   ))
 
   return (
-    <section className={styles.skillsContainer} id="projects">
-      <HeadingWrapper copy='Projects' variant="dark" />
+    <Container className={styles.projectContainer} id="projects">
+      <Container.Centered>
+        <div className={styles.headlineWrapper}>
+          <Headline text="Projects" />
 
-      <section className={styles.projectList}>
-        {list}
-      </section>
-    </section>
+          <Button path="#contact" label="contact me" />
+        </div>
+
+        <div className={styles.projectList}>
+          {list}
+        </div>
+      </Container.Centered>
+    </Container>
   )
 }
 

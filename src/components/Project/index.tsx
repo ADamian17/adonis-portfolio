@@ -2,8 +2,9 @@ import React from "react";
 
 import styles from "./Project.module.scss"
 import { GatsbyImage } from "gatsby-plugin-image";
-import HeadingWrapper from "../HeadingWrapper";
+
 import Button from "../Button";
+import Heading from "../Heading";
 
 export type ProjectType = {
   projectData: Queries.ContentfulProjectContent
@@ -12,40 +13,37 @@ export type ProjectType = {
 const Project: React.FC<ProjectType> = ({ projectData }) => {
   const {
     name,
-    projectDescription,
     projectImage,
+    demoLink,
+    codebaseLink,
+    techUsed
   } = projectData;
 
+  const techList = techUsed && techUsed.map((tech) => (
+    <li key={tech?.id}>{tech?.name}</li>
+  ))
+
   return (
-    <article className={styles.project}>
-      <div className={styles.projectPicture}>
-        <div
-          className={styles.projectBackdrop}
-          style={{
-            ["--background-image" as string]: `url(${projectImage?.url})`
-          }}>
-        </div>
+    <div className={styles.project}>
+      <GatsbyImage
+        alt={projectImage?.title!}
+        image={projectImage?.gatsbyImage!}
+        className={styles.img}
+      />
 
-        <GatsbyImage
-          alt={projectImage?.title!}
-          image={projectImage?.gatsbyImage!}
-          className={styles.projectImg}
-        />
+      <div className={styles.headlineWrapper}>
+        <Heading copy={name!} />
+
+        <ul className={styles.techList}>
+          {techList}
+        </ul>
       </div>
 
-      <div className={styles.projectContent}>
-        <HeadingWrapper copy={name!} variant="dark" headingType="h2" className={styles.projectTitle} />
-
-        <p className={styles.projectText}>
-          {projectDescription}
-        </p>
-
-        <div className={styles.projectBtnGroup}>
-          <Button path="/" label="live Demo" />
-          <Button path="/" label="Github Repo" />
-        </div>
+      <div className={styles.btnGroup}>
+        <Button path={demoLink!} label="view project" target="_blank" />
+        <Button path={codebaseLink!} label="view code" target="_blank" />
       </div>
-    </article>
+    </div>
   )
 }
 

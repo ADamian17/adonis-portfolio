@@ -18,24 +18,40 @@
   }
 }
 
-@mixin grid-columns() {
-  grid-template-columns:
-    [ full-start ]
-    2.4rem
-    [ center-start ]
-    repeat(8, minmax(min-content, 14rem))
-    [ center-end ]
-    2.4rem
-    [ full-end ];
+@mixin main-layout {
+  column-gap: 1.6rem;
+  display: grid;
+  grid-template-columns: set-outer-columns();
+
+  .innerColsCentered {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: set-inner-columns();
+    column-gap: 2.4rem;
+  }
+
+  @include media-query('md', 'up') {
+    grid-template-columns: set-outer-columns(1.4rem);
+
+    .innerColsCentered {
+      grid-template-columns: set-inner-columns(8);
+    }
+  }
 
   @include media-query('lg', 'up') {
-    grid-template-columns:
-      [ full-start ]
-      minmax(6rem, 1fr)
-      [ center-start ]
-      repeat(8, minmax(min-content, 14rem))
-      [ center-end ]
-      minmax(6rem, 1fr)
-      [ full-end ];
+    .innerColsCentered {
+      max-width: 111rem;
+      width: 100%;
+      grid-template-columns: set-inner-columns(12);
+      justify-self: center;
+    }
+  }
+
+  @include media-query('xl', 'up') {
+    grid-template-columns: set-outer-columns(minmax(1.4rem, 1fr));
+
+    .innerColsCentered {
+      width: 111rem;
+    }
   }
 }

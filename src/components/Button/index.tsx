@@ -7,14 +7,16 @@ import styles from "./Button.module.scss";
 type ButtonType = {
   path: string,
   label: string
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>["target"]
 }
 
-const Button: React.FC<ButtonType> = ({ path, label }) => {
+const Button: React.FC<ButtonType> = ({ path, label, target }) => {
   return (
     <CustomLink
       role="button"
       path={path}
-      className={styles.button}>
+      className={styles.button}
+      target={target}>
       {label}
     </CustomLink>
   )
