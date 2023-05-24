@@ -15,7 +15,6 @@ type MainHeroType = {
 
 const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
   const { heroCtaLabel, heroCtaLink, heroHeadline, heroImage, heroNav, heroSubcopy } = heroData!
-  const imgSrc = getImage(heroImage?.gatsbyImage!)
   const navItems = heroNav?.menuItems && heroNav?.menuItems.map(item => (
     <li key={item?.id}>
       <CustomLink
@@ -40,8 +39,7 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
       </div>
 
       <Container>
-
-        <Container.Centered>
+        <Container.Centered className={styles.heroContainer}>
           <nav className={styles.heroNav}>
             <Heading copy="Adonis D. Martin" />
 
@@ -54,7 +52,7 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
             <GatsbyImage
               className={styles.gImg}
               alt='hero img'
-              image={imgSrc!}
+              image={heroImage?.gatsbyImage!}
               loading='eager' />
           </div>
 

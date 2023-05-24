@@ -51,10 +51,6 @@
     }
   }
 
-  .heroContainer {
-    grid-row: 1 / -1;
-  }
-
   .heroImg {
     grid-row: 1 / span 2;
     width: 21.7rem;
@@ -100,44 +96,89 @@
       margin-bottom: 4px;
     }
   }
-  // display: grid;
-  // margin-bottom: 4rem;
 
-  // // @include grid-columns;
+  @include media-query('md', 'up') {
+    .heroRings {
+      top: 8.5rem;
+    }
 
-  // .headlineWrapper {
-  //   grid-column: center-start / center-end;
-  //   height: fit-content;
-  //   max-width: 38rem;
-  //   margin-bottom: 2rem;
+    .heroContainer {
+      grid-template-rows: min-content 1fr;
+    }
 
-  //   .heroHeadline {
-  //     color: $color-grey-light-2;
-  //     font-family: $font-display;
-  //     font-size: 4.4rem;
-  //     font-weight: 400;
-  //     margin-bottom: 2rem;
-  //   }
-  // }
+    .heroNav {
+      padding-top: 2.9rem;
+      width: 100%;
+      height: 4.5rem;
+      justify-self: start;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  // .heroImage {
-  //   grid-column: center-start / center-end;
-  // }
+    .heroImg {
+      grid-row: 1;
+      grid-column: 5 / -1;
+      width: 32.2rem;
+      height: 60rem;
+      translate: 4rem 0;
 
-  // @include media-query('md', 'up') {
-  //   align-items: center;
-  //   padding-bottom: 8rem;
-  //   padding-top: 6rem;
-  //   margin-bottom: 8rem;
+      .gImg {
+        height: 45rem;
+      }
+    }
 
-  //   .headlineWrapper {
-  //     grid-column: 2 / 6;
-  //     justify-self: center;
-  //     margin-bottom: 0;
-  //   }
+    .heroCircle {
+      top: 47.1rem;
+    }
 
-  //   .heroImage {
-  //     grid-column: 6 / 10;
-  //   }
-  // }
+    .headlineWrapper {
+      align-self: start;
+      grid-column: 1 / span 6;
+      grid-row: 1;
+      margin-top: 9rem;
+      text-align: start;
+      z-index: 3;
+      justify-items: start;
+
+      .headline {
+        text-align: start;
+        font-size: 6.2rem;
+        line-height: 6.2rem;
+        letter-spacing: -2.04545px;
+      }
+
+      .subcopy {
+        max-width: 42rem;
+      }
+    }
+  }
+
+  @include media-query('lg', 'up') {
+    .heroImg {
+      grid-row: 1;
+      grid-column: 7 / -1;
+      justify-self: end;
+      width: 45.5rem;
+      height: 72rem;
+      translate: 0 0;
+
+      .gImg {
+        height: 60rem;
+      }
+    }
+
+    .heroCircle {
+      display: none;
+    }
+
+    .headlineWrapper {
+      grid-column: 1 / span 8;
+      row-gap: 4rem;
+
+      .subcopy {
+        margin-bottom: 2.6rem;
+      }
+    }
+  }
 }
