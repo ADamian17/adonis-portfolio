@@ -33,8 +33,14 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
     <header className={styles.mainHero}>
       <RingsFigure className={styles.heroRings} />
 
+      <div className={styles.heroCircle}>
+        <svg>
+          <use href='/icons/pattern-circle.svg#icon'></use>
+        </svg>
+      </div>
 
       <Container>
+
         <Container.Centered>
           <nav className={styles.heroNav}>
             <Heading copy="Adonis D. Martin" />
@@ -50,10 +56,6 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
               alt='hero img'
               image={imgSrc!} />
           </div>
-
-          <svg className={styles.heroCircle}>
-            <use href='/icons/pattern-circle.svg#icon'></use>
-          </svg>
 
           <div className={styles.headlineWrapper}>
             <h1 className={styles.headline} dangerouslySetInnerHTML={{ __html: heroHeadline! }} />

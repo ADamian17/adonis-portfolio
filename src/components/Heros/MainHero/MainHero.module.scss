@@ -11,6 +11,23 @@
     z-index: -2;
   }
 
+  .heroCircle {
+    height: 12.9rem;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 25.4rem;
+    width: 12.9rem;
+    z-index: 3;
+
+    svg {
+      display: block;
+      height: 100%;
+      translate: 6.8rem 0;
+      width: 100%;
+    }
+  }
+
   .heroNav {
     grid-row: 1;
     display: flex;
@@ -34,6 +51,10 @@
     }
   }
 
+  .heroContainer {
+    grid-row: 1 / -1;
+  }
+
   .heroImg {
     grid-row: 1 / span 2;
     width: 21.7rem;
@@ -51,17 +72,6 @@
       width: 100%;
       height: 28rem;
     }
-  }
-
-  .heroCircle {
-    align-self: end;
-    grid-row: 2;
-    height: 12.9rem;
-    justify-self: end;
-    width: 12.9rem;
-    z-index: 3;
-
-    translate: 8rem 0;
   }
 
   .headlineWrapper {
