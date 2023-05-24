@@ -30,7 +30,7 @@ const MainFooter: React.FC<MainFooterType> = ({ footerData }) => {
             <FooterFrom />
           </FooterFormProvider>
 
-          <FooterNav footerNavItems={footerNav} headline='Adonis Martin' />
+          <FooterNav footerNavItems={footerNav} headline='Adonis D. Martin' />
 
           <p className={styles.copyright}>
             &copy; Copyright {year.current}

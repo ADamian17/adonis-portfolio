@@ -6,11 +6,21 @@ export const HeroFragment = graphql`
       heroCtaLabel
       heroCtaLink
       heroHeadline
+      heroSubcopy
+      heroNav {
+        menuItems {
+          menuLabel
+          menuLink
+          menuTarget
+          id
+        }
+      }
       heroImage {
         gatsbyImage(
-          width: 800
+          width: 500
           placeholder: BLURRED
           formats: [WEBP, PNG, AUTO]
+          layout: FULL_WIDTH
         )
       }
     }

@@ -1,8 +1,7 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
-import MainHero from '../../components/Heros/MainHero'
-import MainLayout from '../../layouts/MainLayout'
+import HomePageLayout from '../../layouts/HomePageLayout'
 import ProjectsContainer from '../../containers/ProjectsContainer'
 import Seo from '../../components/Seo'
 import SkillsContainer from '../../containers/SkillsContainer'
@@ -22,13 +21,15 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
   } = data
 
   return (
-    <MainLayout footerData={footerSection}>
-      {/* <MainHero heroData={heroSection} /> */}
+    <HomePageLayout
+      footerData={footerSection}
+      heroData={heroSection}
+    >
 
       <SkillsContainer skillData={skillsSection!} />
 
       <ProjectsContainer projectsData={projectsSection} />
-    </MainLayout>
+    </HomePageLayout>
   )
 }
 

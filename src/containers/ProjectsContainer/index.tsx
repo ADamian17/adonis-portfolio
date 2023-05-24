@@ -1,13 +1,11 @@
 import React from "react";
 
-import HeadingWrapper from "../../components/HeadingWrapper";
+import Button from "../../components/Button";
+import Container from "../../UI/Container";
+import Headline from "../../components/Headline";
 import Project from "../../components/Project";
 
 import styles from "./ProjectsContainer.module.scss"
-import Headline from "../../components/Headline";
-import Container from "../../UI/Container";
-import Button from "../../components/Button";
-import Heading from "../../components/Heading";
 
 export type ProjectsContainerType = {
   projectsData: Queries.ContentfulPageTemplate['projectsSection']

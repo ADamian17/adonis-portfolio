@@ -1,32 +1,61 @@
 import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Button from '../../Button';
 
 import styles from "./MainHero.module.scss";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Container from '../../../UI/Container';
+import Heading from '../../Heading';
+import CustomLink from '../../CustomLink';
 
 type MainHeroType = {
   heroData: Queries.ContentfulPageTemplate["heroSection"]
 }
 
 const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
-  const { heroCtaLabel, heroCtaLink, heroHeadline, heroImage } = heroData!
+  const { heroCtaLabel, heroCtaLink, heroHeadline, heroImage, heroNav, heroSubcopy } = heroData!
   const imgSrc = getImage(heroImage?.gatsbyImage!)
+  const navItems = heroNav?.menuItems && heroNav?.menuItems.map(item => (
+    <li key={item?.id}>
+      <CustomLink
+        className={styles.navLink}
+        path={item?.menuLink!}
+        target={item?.menuTarget!}
+      >
+        {item?.menuLabel}
+      </CustomLink>
+    </li>
+  ))
+
 
   return (
-    <header className={styles.mainHero} id="top">
-      hero
-      {/* <section className={styles.headlineWrapper}>
-        <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
+    <header className={styles.mainHero}>
+      <Container>
+        <Container.Centered>
+          <nav className={styles.heroNav}>
+            <Heading copy="Adonis D. Martin" />
 
-        <Button path={heroCtaLink!} label={heroCtaLabel!} />
-      </section>
+            <ul role="menubar" className={styles.navList}>
+              {navItems}
+            </ul>
+          </nav>
 
-      <GatsbyImage
-        className={styles.heroImage}
-        alt='hero img'
-        image={imgSrc!}
-      /> */}
+          <div className={styles.heroImg}>
+            <GatsbyImage
+              className={styles.gImg}
+              alt='hero img'
+              image={imgSrc!} />
+          </div>
+
+          <div className={styles.headlineWrapper}>
+            <h1 className={styles.headline} dangerouslySetInnerHTML={{ __html: heroHeadline! }} />
+
+            <p className={styles.subcopy}>{heroSubcopy}</p>
+
+            <Button path={heroCtaLink!} label={heroCtaLabel!} />
+          </div>
+        </Container.Centered>
+      </Container>
     </header>
   )
 }
