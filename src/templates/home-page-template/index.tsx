@@ -21,13 +21,8 @@ const HomePageTemplate: React.FC<PageProps<HomePageType>> = ({ data }) => {
   } = data
 
   return (
-    <HomePageLayout
-      footerData={footerSection}
-      heroData={heroSection}
-    >
-
+    <HomePageLayout footerData={footerSection} heroData={heroSection}>
       <SkillsContainer skillData={skillsSection!} />
-
       <ProjectsContainer projectsData={projectsSection} />
     </HomePageLayout>
   )

@@ -18,7 +18,7 @@ const ProjectsContainer: React.FC<ProjectsContainerType> = ({ projectsData }) =>
   ))
 
   return (
-    <Container className={styles.projectContainer}>
+    <Container className={styles.projectContainer} id="projects">
       <Container.Centered>
         <div className={styles.headlineWrapper}>
           <Headline text="Projects" />

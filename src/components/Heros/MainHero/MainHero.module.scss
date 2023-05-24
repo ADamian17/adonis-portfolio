@@ -1,6 +1,16 @@
 @use 'main' as *;
 
 .mainHero {
+  position: relative;
+
+  .heroRings {
+    left: -34.2rem;
+    position: absolute;
+    top: 12.4rem;
+    width: 53rem;
+    z-index: -2;
+  }
+
   .heroNav {
     grid-row: 1;
     display: flex;
@@ -32,7 +42,7 @@
     background: linear-gradient(
       180deg,
       rgba(36, 36, 36, 0.0001) 0.65%,
-      #242424 100%
+      $color-black-smoke 100%
     );
     display: flex;
     align-items: flex-end;
@@ -41,6 +51,17 @@
       width: 100%;
       height: 28rem;
     }
+  }
+
+  .heroCircle {
+    align-self: end;
+    grid-row: 2;
+    height: 12.9rem;
+    justify-self: end;
+    width: 12.9rem;
+    z-index: 3;
+
+    translate: 8rem 0;
   }
 
   .headlineWrapper {

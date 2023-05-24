@@ -7,6 +7,7 @@ import styles from "./MainHero.module.scss";
 import Container from '../../../UI/Container';
 import Heading from '../../Heading';
 import CustomLink from '../../CustomLink';
+import RingsFigure from '../../RingsFigure';
 
 type MainHeroType = {
   heroData: Queries.ContentfulPageTemplate["heroSection"]
@@ -30,6 +31,9 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
 
   return (
     <header className={styles.mainHero}>
+      <RingsFigure className={styles.heroRings} />
+
+
       <Container>
         <Container.Centered>
           <nav className={styles.heroNav}>
@@ -46,6 +50,10 @@ const MainHero: React.FC<MainHeroType> = ({ heroData }) => {
               alt='hero img'
               image={imgSrc!} />
           </div>
+
+          <svg className={styles.heroCircle}>
+            <use href='/icons/pattern-circle.svg#icon'></use>
+          </svg>
 
           <div className={styles.headlineWrapper}>
             <h1 className={styles.headline} dangerouslySetInnerHTML={{ __html: heroHeadline! }} />
